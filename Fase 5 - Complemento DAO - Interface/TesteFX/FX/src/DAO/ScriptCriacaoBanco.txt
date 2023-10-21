@@ -1,0 +1,124 @@
+
+
+
+create table objetos (
+    codigo_objeto serial primary key,
+    quantidade_exemplares int,
+    valor_aluguel float
+);
+
+
+create table tb_livros (
+	titulo varchar(40) primary key,
+	codigo_objeto int,
+	genero varchar(40),
+	autor varchar(20),
+	data_de_lancamento Date,
+	quantidade_pagina int,
+	foreign key(codigo_objeto) references objetos(codigo_objeto)
+);
+
+create table tb_discos (
+	titulo varchar(40) primary key,
+	codigo_objeto int,
+	nome_banda varchar(30),
+	estilo varchar(30),
+	foreign key(codigo_objeto) references objetos(codigo_objeto)
+);
+
+create table tb_clientes(
+	codigo_cliente serial unique,
+	cpf varchar(30) unique,
+	nome varchar(40) not null,
+	endereco varchar(40),
+	primary key (codigo_cliente,cpf)
+);
+
+create table tb_alugueis (
+    codigo_aluguel serial primary key,
+    cpf_cliente varchar(30) not null,
+    codigo_objeto int not null,
+    data_aquisicao Date not null,
+    data_devolucao Date not null,
+    foreign key(cpf_cliente) references tb_clientes(cpf) ON DELETE CASCADE,
+    foreign key(codigo_objeto) references objetos(codigo_objeto) ON DELETE CASCADE
+);
+
+create table tb_funcionarios (
+	codigo_funcionario serial unique,
+	login varchar(30) primary key,
+	senha varchar(30) not null,
+	funcao varchar(20) not null
+);
+
+Create view view_vendas AS
+SELECT tb_livros.titulo AS titulo, objetos.Quantidade_exemplares, objetos.Valor_aluguel, tb_livros.codigo_objeto AS codigo_objeto
+FROM tb_livros
+INNER JOIN objetos ON tb_livros.codigo_objeto = objetos.codigo_objeto
+UNION
+SELECT tb_discos.titulo, objetos.Quantidade_exemplares, objetos.Valor_aluguel, tb_discos.codigo_objeto AS codigo_objeto
+FROM tb_discos
+INNER JOIN objetos ON tb_discos.codigo_objeto = objetos.codigo_objeto;
+
+
+CREATE VIEW view_alugueis AS
+SELECT
+    c.nome AS nome,
+    COALESCE(l.titulo, d.titulo) AS titulo,
+    o.valor_aluguel AS valor_aluguel,
+    a.data_aquisicao AS data_aquisicao,
+    a.data_devolucao AS data_devolucao
+FROM tb_alugueis AS a
+JOIN tb_clientes AS c ON a.cpf_cliente = c.cpf
+JOIN objetos AS o ON a.codigo_objeto = o.codigo_objeto
+LEFT JOIN tb_livros AS l ON a.codigo_objeto = l.codigo_objeto
+LEFT JOIN tb_discos AS d ON a.codigo_objeto = d.codigo_objeto;
+
+
+
+CREATE OR REPLACE FUNCTION calcular_lucro_ultima_semana() RETURNS numeric AS $$
+DECLARE
+    total_lucro numeric := 0;
+BEGIN
+    -- Calcula o lucro total da última semana
+    SELECT COALESCE(SUM(objetos.valor_aluguel), 0)
+    INTO total_lucro
+    FROM tb_alugueis
+    INNER JOIN objetos ON tb_alugueis.codigo_objeto = objetos.codigo_objeto
+    WHERE tb_alugueis.data_aquisicao BETWEEN (CURRENT_DATE - INTERVAL '8 days') AND (CURRENT_DATE + INTERVAL '1 days');
+
+    -- Retorna o lucro total (0 se for nulo)
+    RETURN total_lucro;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION total_discos_alugados_ultima_semana()
+RETURNS bigint AS $$
+DECLARE
+    total_discos bigint;
+BEGIN
+    SELECT COUNT(*) INTO total_discos
+    FROM tb_alugueis
+    WHERE tb_alugueis.codigo_objeto IN (SELECT codigo_objeto FROM tb_discos)
+      AND tb_alugueis.data_aquisicao BETWEEN (CURRENT_DATE - INTERVAL '8 days') AND (CURRENT_DATE  INTERVAL '1 days');
+
+    RETURN total_discos;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION total_livros_alugados_ultima_semana()
+RETURNS bigint AS $$
+DECLARE
+    total_livros bigint;
+BEGIN
+    SELECT COUNT(*) INTO total_livros
+    FROM tb_alugueis
+    WHERE tb_alugueis.codigo_objeto IN (SELECT codigo_objeto FROM tb_livros)
+      AND tb_alugueis.data_aquisicao BETWEEN (CURRENT_DATE - INTERVAL '8 days') AND (CURRENT_DATE  INTERVAL '1 days');
+
+    RETURN total_livros;
+END;
+$$ LANGUAGE plpgsql;
+
+
+

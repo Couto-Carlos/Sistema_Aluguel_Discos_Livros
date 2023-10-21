@@ -1,0 +1,129 @@
+/*
+        try{
+            Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc_test", "postgres", "1234");
+            if(conexao != null){
+                System.out.print("Banco de dados conectado com sucesso");
+                Statement stm = conexao.createStatement();
+                insereDados(stm);
+                consultadados(stm);
+                conexao.close();
+            }else{
+                System.out.println("Erro na conexao");
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+    public static void consultadados(Statement stm){
+        String sql = "select id,nome from usuario";
+        try {
+            ResultSet result = stm.executeQuery(sql);
+            while(result.next()){
+                System.out.println("id: "+ result.getInt("id") + " Nome: " + result.getString("nome"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void insereDados(Statement stm){
+        String sql = "insert into usuario (id, nome) values (5, 'Joao')";
+        try {
+            stm.executeUpdate(sql);
+        } catch (Exception e) {
+            
+        }
+    }
+     */
+
+      
+            /* 
+
+              for(Livro livro : livros){
+                System.out.println("-----------------------------------" + 
+                                 "\nItem id: " + livro.getId() + 
+                                 "\nTitulo: " + livro.getTitulo() + 
+                                 "\nAutor: " + livro.getAutor() +
+                                 "\nQuantidade de Exemplares: " + livro.getQuantidadeExemplares() + 
+                                 "\nValor do aluguel: " + livro.getValorAluguel() +
+                                 "\nGenero: " + livro.getGenero() + 
+                                 "\nData de Lancamento: " + livro.getdataLancamento() +
+                                 "\nQuantidade de Paginas: " + livro.getQuantidadePaginas());
+                                 
+            }
+
+            ////////////////// MOSTRAR DISCOS ////////////////////////////////
+
+             List<Disco> discos = conexaoDisco.listar();
+
+            for(Disco disco : discos){
+                System.out.println("-----------------------------------" + 
+                                 "\nItem id: " + disco.getId() + 
+                                 "\nTitulo: " + disco.getTitulo() + 
+                                 "\nNome da banda: " + disco.getNomeBanda() +
+                                 "\nEstilo: " + disco.getEstilo() +
+                                 "\nQuantidade de Exemplares: " + disco.getQuantidadeExemplares()+
+                                 "\nValor do Aluguel: " + disco.getValorAluguel());
+                                 
+            }
+
+            ///////////////////MOSTRAR LIVROS/////////////////////////////
+            List<Objeto> objetos = conexaoObjeto.listar();
+
+            for(Objeto objeto : objetos){
+                System.out.println("-----------------------------------" + 
+                                 "\nItem id: " + objeto.getId() + 
+                                 "\nQuantidade de Exemplares: " + objeto.getQuantidadeExemplares() + 
+                                 "\nValor do aluguel: " + objeto.getValorAluguel());
+            }
+          
+            //////////////////MOSTRAR CLIENTES//////////////////////////
+
+             conexaoCliente.inserir(cli);
+
+            List<Cliente> clientes = conexaoCliente.listar();
+
+            for(Cliente cliente : clientes){
+                System.out.println("-----------------------------------" + 
+                                 "\nCliente id: " + cliente.getId() + 
+                                 "\nNome: " + cliente.getNome() + 
+                                 "\nCPF: " + cliente.getCpf() +
+                                 "\nEndereço : " + cliente.getEndereco());
+                                 
+            }
+             */
+            //Disco dis = new Disco(4 ,23 ,14, "Disco2", "Banda", "Estilo");
+            //Livro liv = new Livro (23, 14 ,  "Livro6", "Romance", test, "Joao", 300);
+
+            // ALT + SHIFT + F - IDENTAR
+
+            // VIEW OBJETO - LIVRO, OBJETO - DISCO
+
+              /*
+        try{
+            Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc_test", "postgres", "1234");
+            if(conexao != null){
+                System.out.print("Banco de dados conectado com sucesso");
+                Statement stm = conexao.createStatement();
+                //insereDados(stm);
+                //consultadados(stm);
+                //conexao.close();
+            }else{
+                System.out.println("Erro na conexao");
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+         */
+
+
+        /*
+         * Funcionario novoFuncionario = new Funcionario(usuario.getText(),
+         * senha.getText(), "000");
+         * 
+         * FuncionarioDAO conexaoFuncionario = new FuncionarioDAO();
+         * conexaoFuncionario.getConnection();
+         * 
+         * System.out.println(" --------------\n"+
+         * conexaoFuncionario.buscar(novoFuncionario));
+         */

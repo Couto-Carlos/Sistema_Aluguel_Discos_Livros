@@ -1,0 +1,14 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Program Files\\Java\\LibPostgres\\postgresql-42.6.0.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.base.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.controls.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.fxml.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.graphics.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.media.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.swing.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx.web.jar",
+        "c:\\Program Files\\Java\\LibFX\\javafx-swt.jar"
+    ]
+}

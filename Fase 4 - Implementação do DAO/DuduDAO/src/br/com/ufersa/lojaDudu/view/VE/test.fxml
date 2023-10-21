@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="1080.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="13.0" layoutY="128.0" prefHeight="446.0" prefWidth="286.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaVenda" prefHeight="55.0" prefWidth="286.0" style="-fx-background-radius: 5; -fx-background-color: #f6f6f6;" text="Venda">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaEstqLivros" prefHeight="55.0" prefWidth="286.0" style="-fx-background-radius: 5; -fx-background-color: #f6f6f6;" text="Estoque de Livros">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="286.0" style="-fx-background-radius: 5; -fx-background-color: #363B3E;" text="Estoque de Discos" textFill="WHITE">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaClientes" prefHeight="55.0" prefWidth="286.0" style="-fx-background-radius: 5; -fx-background-color: #f6f6f6;" text="Clientes Registrados">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaRelatorio" prefHeight="55.0" prefWidth="286.0" style="-fx-background-radius: 5; -fx-background-color: #f6f6f6;" text="Relatorios">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaFuncionarios" prefHeight="55.0" prefWidth="286.0" style="-fx-background-radius: 5; -fx-background-color: #f6f6f6;" text="Funcionários">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <Button alignment="BASELINE_LEFT" layoutX="11.0" layoutY="8.0" mnemonicParsing="false" onAction="#mudarTelaLogin" style="-fx-border-radius: 5; -fx-border-color: #363B3E; -fx-background-radius: 5; -fx-background-color: #f6f6f6;" text="Sair">
+               <font>
+                  <Font name="Work Sans SemiBold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="800.0" prefWidth="206.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="123.0" fitWidth="191.0" layoutX="10.0" layoutY="10.0">
+               <image>
+                  <Image url="@Logo_BW.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="284.0" layoutY="69.0" text="Inventário">
+               <font>
+                  <Font name="Work Sans SemiBold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="94.0" text="Estoque de Discos" textFill="#c82e03">
+               <font>
+                  <Font name="Work Sans SemiBold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

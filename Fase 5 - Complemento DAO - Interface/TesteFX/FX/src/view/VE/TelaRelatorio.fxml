@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaRelatorioController">
+   <children>
+      <VBox minWidth="-Infinity" prefHeight="538.0" prefWidth="140.0">
+         <children>
+            <VBox>
+               <children>
+                  <Button alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#mudarTelaLogin" prefHeight="30.0" prefWidth="80.0" style="-fx-border-radius: 10; -fx-border-color: #363B3E; -fx-background-radius: 10; -fx-background-color: #f6f6f6;" text="Sair">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#mudarTelaVenda" prefHeight="30.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: #f6f6f6;" text="Venda">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#mudarTelaEstqLivros" prefHeight="30.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: #f6f6f6;" text="Estoque de Livros">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#mudarTelaEstqDiscos" prefHeight="30.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: #f6f6f6;" text="Estoque de Discos">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#mudarTelaClientes" prefHeight="30.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: #f6f6f6;" text="Clientes Registrados">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: #363B3E;" text="Relatorios" textFill="WHITE">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="funcBotao" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#mudarTelaFuncionarios" prefHeight="30.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: #f6f6f6;" text="Funcionários">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane prefHeight="264.0" prefWidth="140.0" />
+            <VBox alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="88.0">
+               <children>
+                  <Label fx:id="nomeUsuario" text="Adriano Felipe" wrapText="true">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="BOTTOM_CENTER">
+                     <children>
+                        <Label fx:id="funcUsuario" contentDisplay="RIGHT" text="Funcionário" textAlignment="RIGHT" textFill="#6ee364">
+                           <font>
+                              <Font name="Work Sans SemiBold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle fx:id="funcColor" fill="#6ee364" radius="5.0" stroke="#5eb357" strokeType="INSIDE">
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <HBox.margin>
+            <Insets bottom="25.0" left="15.0" right="15.0" top="15.0" />
+         </HBox.margin>
+      </VBox>
+      <Line endX="99.41421508789062" endY="470.29290771484375" startX="99.41421508789062" startY="1045.5858154296875" strokeWidth="0.3" />
+      <VBox prefHeight="526.0" prefWidth="1116.0">
+         <children>
+            <Group>
+               <children>
+                  <HBox minHeight="-Infinity">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="100.0">
+                           <image>
+                              <Image url="@icons/Logo_BW.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="Relatórios de">
+                                 <font>
+                                    <Font name="Work Sans SemiBold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Vendas" textFill="#59aa52">
+                                 <font>
+                                    <Font name="Work Sans SemiBold" size="27.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="25.0" />
+               </VBox.margin>
+            </Group>
+            <Line endX="692.2929077148438" startX="-100.0" strokeWidth="0.3" />
+            <HBox prefHeight="523.0" prefWidth="794.0" style="-fx-background-color: #FBFDFF;">
+               <children>
+                  <VBox minWidth="-Infinity" prefHeight="435.0" prefWidth="211.0" style="-fx-background-color: #f6f6f6;">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <AnchorPane prefHeight="341.0" prefWidth="223.0" style="-fx-background-color: #ffffff; -fx-background-radius: 13;">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="312.0" prefWidth="211.0">
+                                 <children>
+                                    <Label text="Vendas">
+                                       <font>
+                                          <Font name="Work Sans SemiBold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Ultima Semana">
+                                       <font>
+                                          <Font name="Work Sans Regular" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="302.0" prefWidth="181.0">
+                                       <children>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label alignment="CENTER" text="Total">
+                                                   <font>
+                                                      <Font name="Work Sans SemiBold" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="vendaTotal" alignment="CENTER" text="0">
+                                                   <font>
+                                                      <Font name="System Bold" size="80.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" text="Livros">
+                                                         <font>
+                                                            <Font name="Work Sans SemiBold" size="19.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="vendaLivros" alignment="CENTER" text="0">
+                                                         <font>
+                                                            <Font name="System Bold" size="40.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <Pane prefHeight="70.0" prefWidth="25.0" />
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" text="Discos">
+                                                         <font>
+                                                            <Font name="Work Sans SemiBold" size="19.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="vendaDiscos" alignment="CENTER" text="0">
+                                                         <font>
+                                                            <Font name="System Bold" size="40.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="-Infinity" prefHeight="108.0" prefWidth="260.0" style="-fx-background-color: #59AA52; -fx-background-radius: 13;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="108.0" prefWidth="211.0">
+                                 <children>
+                                    <Label text="Lucro" textFill="WHITE">
+                                       <font>
+                                          <Font name="Work Sans SemiBold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Ultima Semana" textFill="WHITE">
+                                       <font>
+                                          <Font name="Work Sans Regular" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label prefHeight="94.0" text="R$ " textFill="WHITE">
+                                             <font>
+                                                <Font name="Work Sans Bold" size="31.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lucroSemana" prefHeight="94.0" text="0,00" textFill="WHITE">
+                                             <font>
+                                                <Font name="Work Sans Bold" size="31.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <Pane minWidth="-Infinity" prefHeight="521.0" prefWidth="15.0" style="-fx-background-color: #f6f6f6;" />
+                  <VBox minWidth="-Infinity" prefWidth="568.0" style="-fx-background-color: #f6f6f6;">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="25.0" prefWidth="568.0">
+                           <children>
+                              <Label alignment="BOTTOM_LEFT" minWidth="-Infinity" prefHeight="25.0" text="Alugueis">
+                                 <font>
+                                    <Font name="Work Sans SemiBold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="25.0" prefWidth="399.0" />
+                              <TextField fx:id="srchCliente" minWidth="-Infinity" onAction="#procurarCliente" prefHeight="27.0" prefWidth="191.0" promptText="Cliente" style="-fx-background-radius: 10; -fx-background-color: #FBFDFF; -fx-border-color: #959595; -fx-border-radius: 10;">
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <DatePicker fx:id="pickDate" minWidth="-Infinity" onAction="#pesquisarData" prefHeight="4.0" prefWidth="174.0" promptText="01/01/2000" style="-fx-border-color: #959595; -fx-border-radius: 4;" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox prefHeight="400.0" prefWidth="654.0" style="-fx-background-color: #FBFDFF;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="32.0" prefWidth="423.0" style="-fx-background-color: #FBFDFF; -fx-border-color: #efefef;">
+                                 <children>
+                                    <Label maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="80.0" text="Cliente" textAlignment="CENTER" textFill="#616a6e">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="130.0" text="Titulo" textAlignment="CENTER" textFill="#616a6e">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="66.0" text="Valor" textAlignment="CENTER" textFill="#616a6e">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label layoutX="350.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="114.0" text="Data de Aquisição" textAlignment="CENTER" textFill="#616a6e">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="7.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets left="7.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="125.0" text="Data de Devolução" textAlignment="CENTER" textFill="#616a6e">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="7.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="489.0" prefWidth="509.0" style="-fx-background-color: #f6f6f6;">
+                                 <content>
+                                    <VBox fx:id="aluguelLayout" prefHeight="365.0" prefWidth="568.0" style="-fx-background-color: #FBFDFF;" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets bottom="25.0" left="35.0" right="25.0" top="25.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

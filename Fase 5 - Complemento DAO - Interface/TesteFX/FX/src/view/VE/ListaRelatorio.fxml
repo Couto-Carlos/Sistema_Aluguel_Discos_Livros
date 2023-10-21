@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="553.0" style="-fx-background-color: #FBFDFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListaRelatorioController">
+   <children>
+      <Label fx:id="cod_alug" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="80.0" text="Codigo Aluguel" textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="7.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="cpf_cliente" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="130.0" text="CPF Cliente" textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="7.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="cod_obj" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="80.0" text="Codigo Objeto" textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="7.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="data_ini" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="115.0" text="Data de Aquisição" textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="7.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="data_end" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="125.0" text="Data de Devolução" textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="7.0" />
+         </HBox.margin>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="3.0" top="3.0" />
+   </padding>
+</HBox>

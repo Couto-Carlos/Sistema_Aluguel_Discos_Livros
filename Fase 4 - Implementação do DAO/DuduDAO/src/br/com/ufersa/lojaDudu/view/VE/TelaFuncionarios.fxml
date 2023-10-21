@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="360.0" prefWidth="640.0" style="-fx-background-color: #F6F6F6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufersa.lojaDudu.controller.FuncionariosController">
+   <children>
+      <Group layoutX="14.0" layoutY="14.0">
+         <children>
+            <Button alignment="BASELINE_LEFT" layoutY="36.0" mnemonicParsing="false" onAction="#mudarTelaVenda" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Venda">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="58.0" mnemonicParsing="false" onAction="#mudarTelaEstqLivros" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Estoque de Livros">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="80.0" mnemonicParsing="false" onAction="#mudarTelaEstqDiscos" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Estoque de Discos">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="102.0" mnemonicParsing="false" onAction="#mudarTelaClientes" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Clientes Registrados">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="124.0" mnemonicParsing="false" onAction="#mudarTelaRelatorio" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Relatorios">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="5.0" layoutY="146.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #363B3E;" text="Funcionários" textFill="WHITE">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaLogin" prefHeight="22.0" prefWidth="62.0" style="-fx-border-color: #363B3E; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Sair">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <Line endX="-100.0" endY="255.0" layoutX="236.0" layoutY="105.0" startX="-100.0" startY="-105.0" strokeWidth="0.3" />
+      <Group layoutX="161.0" layoutY="14.0">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="76.0">
+               <image>
+                  <Image url="@Logo_BW.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="91.0" layoutY="2.0" text="Gerenciar">
+               <font>
+                  <Font name="Work Sans SemiBold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="27.0" text="Funcionários" textFill="#a45cff">
+               <font>
+                  <Font name="Work Sans SemiBold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <TextField fx:id="srchFuncionario" layoutX="161.0" layoutY="79.0" onAction="#procurarFuncionario" prefHeight="18.0" prefWidth="193.0" promptText="Procure por nome, função ou cpf">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </TextField>
+      <Button fx:id="addFuncionario" layoutX="529.0" layoutY="79.0" mnemonicParsing="false" onAction="#adicionarFuncionario" prefHeight="17.0" prefWidth="88.0" style="-fx-background-radius: 5; -fx-background-color: #363B3E;" text="Adicionar Funcionário" textFill="WHITE">
+         <font>
+            <Font name="Work Sans Medium" size="7.0" />
+         </font>
+      </Button>
+      <HBox layoutX="161.0" layoutY="105.0" prefHeight="235.0" prefWidth="456.0" style="-fx-background-color: #FBFDFF;">
+         <children>
+            <VBox style="-fx-background-color: #FBFDFF;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="423.0" style="-fx-background-color: #FBFDFF; -fx-border-color: #efefef;">
+                     <children>
+                        <Label maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="13.0" text="Id" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label minHeight="-Infinity" prefHeight="17.0" prefWidth="172.0" text="Nome" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="69.0" text="Função" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="44.0" text="CPF" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="61.0" text="Endereço" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="33.0" text="Salario" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label layoutX="350.0" layoutY="11.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="69.0" text="Opções" textAlignment="CENTER" textFill="#616a6e">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="235.0" prefWidth="472.0" style="-fx-background-color: #f6f6f6;">
+                     <content>
+                        <VBox fx:id="funcionariosLayout" prefHeight="213.0" prefWidth="454.0" style="-fx-background-color: #FBFDFF;" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="28.0" layoutY="309.0" prefHeight="20.0" prefWidth="88.0">
+         <children>
+            <Label fx:id="nomeUsuario" text="Adriano Felipe" wrapText="true">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="funcUsuario" contentDisplay="RIGHT" text="Funcionário" textAlignment="RIGHT" textFill="#6ee364">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="8.0" />
+                     </font>
+                  </Label>
+                  <Circle fx:id="funcColor" fill="#6ee364" radius="3.0" stroke="#5eb357" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

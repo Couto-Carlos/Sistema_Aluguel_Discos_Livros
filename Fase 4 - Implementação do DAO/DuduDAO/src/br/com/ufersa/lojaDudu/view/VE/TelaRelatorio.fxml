@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" style="-fx-background-color: #F6F6F6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufersa.lojaDudu.controller.RelatorioController">
+   <children>
+      <Group layoutX="14.0" layoutY="14.0">
+         <children>
+            <Button alignment="BASELINE_LEFT" layoutY="36.0" mnemonicParsing="false" onAction="#mudarTelaVenda" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Venda">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="58.0" mnemonicParsing="false" onAction="#mudarTelaEstqLivros" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Estoque de Livros">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="80.0" mnemonicParsing="false" onAction="#mudarTelaEstqDiscos" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Estoque de Discos">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="102.0" mnemonicParsing="false" onAction="#mudarTelaClientes" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Clientes Registrados">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="124.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #363B3E;" text="Relatorios" textFill="WHITE">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutY="146.0" mnemonicParsing="false" onAction="#mudarTelaFuncionarios" prefHeight="22.0" prefWidth="104.0" style="-fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Funcionários">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mudarTelaLogin" prefHeight="22.0" prefWidth="62.0" style="-fx-border-radius: 5; -fx-border-color: #363B3E; -fx-background-radius: 5; -fx-background-color: #F6F6F6;" text="Sair">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Group>
+      <Line endX="-100.0" endY="255.0" layoutX="236.0" layoutY="105.0" startX="-100.0" startY="-105.0" strokeWidth="0.3" />
+      <Group layoutX="161.0" layoutY="14.0">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="76.0">
+               <image>
+                  <Image url="@Logo_BW.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="91.0" layoutY="2.0" text="Relatórios">
+               <font>
+                  <Font name="Work Sans SemiBold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="27.0" text="Vendas e Devoluções" textFill="#59aa52">
+               <font>
+                  <Font name="Work Sans SemiBold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="357.0" layoutY="82.0">
+         <children>
+            <TextField fx:id="srchDateIni" layoutX="157.0" layoutY="1.0" onAction="#procurarDateIni" prefHeight="12.0" prefWidth="47.0" promptText="dd/mm/aaaa">
+               <font>
+                  <Font name="Work Sans Medium" size="6.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="147.0" layoutY="3.0" text="De:">
+               <font>
+                  <Font name="Work Sans Medium" size="6.0" />
+               </font>
+            </Label>
+            <Label layoutX="210.0" layoutY="2.0" text="Até:">
+               <font>
+                  <Font name="Work Sans Medium" size="6.0" />
+               </font>
+            </Label>
+            <Label text="Itens Alugados">
+               <font>
+                  <Font name="Work Sans SemiBold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="srchDateEnd" layoutX="222.0" onAction="#procurarDateEnd" prefHeight="12.0" prefWidth="47.0" promptText="dd/mm/aaaa">
+               <font>
+                  <Font name="Work Sans Medium" size="6.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+         </children>
+      </Group>
+      <Group layoutX="161.0" layoutY="82.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="123.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="185.0">
+               <effect>
+                  <DropShadow height="5.61" offsetX="2.0" offsetY="2.0" radius="2.4875" width="6.34">
+                     <color>
+                        <Color red="0.8157894611358643" green="0.8157894611358643" blue="0.8157894611358643" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Rectangle>
+            <Label layoutX="6.0" layoutY="6.0" text="Vendas">
+               <font>
+                  <Font name="Work Sans SemiBold" size="11.0" />
+               </font>
+            </Label>
+            <Text accessibleRole="TEXT_AREA" layoutX="94.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="64" textAlignment="CENTER" wrappingWidth="56.53131103515625">
+               <font>
+                  <Font name="Work Sans Regular" size="42.0" />
+               </font>
+            </Text>
+            <Text layoutX="101.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" textAlignment="CENTER" wrappingWidth="43.47003173828125">
+               <font>
+                  <Font name="Work Sans SemiBold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="9.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livros" textAlignment="CENTER" wrappingWidth="35.47003173828125">
+               <font>
+                  <Font name="Work Sans Regular" size="10.0" />
+               </font>
+            </Text>
+            <Text accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="26" textAlignment="CENTER" wrappingWidth="26.771343231201172">
+               <font>
+                  <Font name="Work Sans Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discos" textAlignment="CENTER" wrappingWidth="35.47003173828125">
+               <font>
+                  <Font name="Work Sans Regular" size="10.0" />
+               </font>
+            </Text>
+            <Text accessibleRole="TEXT_AREA" layoutX="15.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="38" textAlignment="CENTER" wrappingWidth="26.104656219482422">
+               <font>
+                  <Font name="Work Sans Regular" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group accessibleRole="BUTTON" layoutX="161.0" layoutY="212.0">
+         <children>
+            <Button fx:id="relatorio" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#gerarRelatorio" opacity="0.0" prefHeight="64.0" prefWidth="187.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59aa52" height="62.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="185.0" />
+            <Text accessibleRole="TEXT_AREA" fill="WHITE" layoutX="46.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$0,00" textAlignment="RIGHT" wrappingWidth="132.0">
+               <font>
+                  <Font name="Work Sans SemiBold" size="26.0" />
+               </font>
+            </Text>
+            <Label layoutX="6.0" layoutY="4.0" text="Lucro" textFill="WHITE">
+               <font>
+                  <Font name="Work Sans SemiBold" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Button fx:id="puCliente" layoutX="161.0" layoutY="279.0" mnemonicParsing="false" onAction="#abrirPopUpClientes" prefHeight="63.0" prefWidth="87.0" text="Pesquisar por Cliente" textAlignment="CENTER" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="puItem" layoutX="257.0" layoutY="279.0" mnemonicParsing="false" onAction="#abrirPopUpItems" prefHeight="63.0" prefWidth="87.0" text="Pesquisar por Item Alugado" textAlignment="CENTER" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ListView layoutX="357.0" layoutY="99.0" prefHeight="243.0" prefWidth="269.0" />
+      <VBox layoutX="26.0" layoutY="312.0" prefHeight="20.0" prefWidth="88.0">
+         <children>
+            <Label fx:id="nomeUsuario" text="Adriano Felipe" wrapText="true">
+               <font>
+                  <Font name="Work Sans SemiBold" size="8.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="funcUsuario" contentDisplay="RIGHT" text="Funcionário" textAlignment="RIGHT" textFill="#6ee364">
+                     <font>
+                        <Font name="Work Sans SemiBold" size="8.0" />
+                     </font>
+                  </Label>
+                  <Circle fx:id="funcColor" fill="#6ee364" radius="3.0" stroke="#5eb357" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
